@@ -1,0 +1,68 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<nav class="navbar navbar-icon-top navbar-expand-lg bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" [collapse]=isCollapsed>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">
+          <i class="fa fa-home"></i>
+          Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fa fa-envelope-o">
+            <span class="badge badge-danger">11</span>
+          </i>
+          Messages
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">
+          <i class="fa fa-envelope-o">
+            <span class="badge badge-danger">11</span>
+          </i>
+          Disabled
+        </a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4 align-self-center form-group">
+    <input type="text" placeholder="Daterangepicker" class="form-control" #drp="bsDaterangepicker" bsDaterangepicker
+      [bsConfig]="bsConfig" />
+  </div>
+  <div class="col-md-4">
+    <input class="btn btn-success" type="button" (click)="setOptions()" value="Set min date">
+  </div>
+</div>
+
+
+<div class="row no-gutters justify-content-around">
+  <div class="col-md-4">
+    <input class="form-control" placeholder="Daterangepicker" ngModel bsDaterangepicker [minDate]="rangeMinDate" [maxDate]="rangeMaxDate">
+  </div>
+</div>
+
+
+
+<router-outlet></router-outlet>
